@@ -81,10 +81,17 @@ function handleItemCheckClicked() {
   });
 }
 
-
+function deleteListItem() {
+  for(let i = 0; i < 4; i++) {
+    console.log('current id' + id);
+  }
+}
 function handleDeleteItemClicked() {
   $('.js-shopping-list').on('click', `.js-item-delete`, event => {
     console.log('`handleDeleteItemClicked` ran');
+    const id = getItemIdFromElement(event.currentTarget);
+    deleteListItem(id);
+    renderShoppingList();
   });
 }
 
